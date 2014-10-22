@@ -12,70 +12,165 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
+ @import 'bootstrap';
 
+ html, body{
+  height: 100%;
+}
+header{
+  padding-top: 20px;
+}
+
+.titulo{
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  color: #E5551E;
+  text-shadow: rgba(239,105,26,0.5) 3px 2px;;
+}
+.subt{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+
+  
+}
+.divsubt{
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding-left: 10px
+}
 body {
-  background: linear-gradient(#000, #003366);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: Avenir Next, Arial;
-  color: #ffffff;
+ 
+  background: url(1.jpg) no-repeat fixed top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-p {
-  color: gray;
-}
+.styleform{
 
-a {
-  color: #099;
-}
+ background-color: rgba(255,255,255,0.8);
+ border-radius: 10px;
+ padding: 20px;
+ 
 
-header a {
-  color: #fff;
-  display: block;
-  float: right;
 }
-header img {
-  height: 30px;
-  display: block;
-  float: right;
+footer{
+ position: fixed;
+ background-color: rgba(0,0,0,0.8);
+ bottom: 0px;
+ width: 100%;
+ padding: 10px;
+ color: white;
+ text-align: center;
+ line-height: 1;
+ margin-bottom: -1px;
+ 
 }
-
-figure {
-  width: 300px;
-  margin: 30px auto 30px auto;
-  background-color: #f5f5f5;
-  padding: 15px;
-}
-figure img {
-  height: 300px;
-}
-figure button {
-  margin-left: 20px;
-  text-align: right;
-  height: 50px;
-  width: 120px;
-  background: url(like.png) no-repeat;
-}
-.like {
-  background-position: 0 -50px;
-}
-.nolike {
-}
-
-footer {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
 .alert {
-  color: darkred;
+  color: white;
+  background-color:rgba(241,17,17,0.6);
+  border-radius: 5px;
+  width: 60%;
+
 }
 .notice{
-  color: darkgreen;
+  color: white;
+  background-color:rgba(27,143,0,0.6);
+  border-radius: 5px;
+  width: 60%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
 }
 
-#match figure {
-  float: left;
+.avatar{
+  padding-left: 5px;
+}
+.link-avatar{
+  background-color: #F67B0D;
+  padding-right: 10px;
+  padding-left: 20px;
+  padding-top:2px;
+  padding-bottom:2px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: white;
+
+
+}
+.modalv{
+
+  background-color: rgba(0,0,0,0.5);
+  margin: auto;
+  padding: 0px;
+
+}
+.modalv label, h2{
+  color: white;
+}
+.devisenew{
+  background-color: rgba(0,0,0,0.5);
+  margin-left: 200px;
+  
+  padding: 0px;
+  border-radius: 20px;
+  color: white;
+}
+.errores{
+  background-color:rgba(241,17,17,0.6);
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#error_explanation, h2{
+  font-size: 20px;
+
+}
+#error_explanation, li{
+  font-size: 15px;
+
+}
+.like {
+ width: 70px;
+ margin-top: 20px;
+ margin-left: 50px;
+}
+.nolike {
+  width: 70px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+.tabladatos{
+  margin-top: 60px;
+  font-size: 25px;
+}
+.matchimg{
+  width: 150px;
+}
+.match{
+  margin-left: 100px;
+}
+
+figure{
+  display: inline-block;
+  margin-left: 40px
+}
+.match1 ,.match2{
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  border-radius: 10px;
+}
+.match1{
+ background-color:rgba(241,17,17,0.6);
+}
+.match2{
+  
+  
+  background-color:rgba(27,143,0,0.6);
 }

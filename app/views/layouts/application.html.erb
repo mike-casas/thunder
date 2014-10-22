@@ -5,29 +5,66 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <header>
-    <% if user_signed_in? %>
-      <%= link_to "Salir", destroy_user_session_path, method: :delete %>
-      <%= image_tag Gravatar.new(current_user.email).image_url %>
-    <% end %>
-    <h1>TE GUSTA O NO</h1>
-  </header>
 
-  <p>Elige aquellos amig@s que te gustan de forma anonima, te avisaremos si ambos coinciden, el resto va por tu cuenta.</p>
+  <div class="container">
 
-  <div class="content">
-    <% flash.each do |name, err|%>
-      <%= content_tag :div, err, class: name %>
-    <% end %>
+    <div class="col-sm-12">
+      <header>
+            
 
-    <%= yield %>
+      <div class="row">
+        <div class="col-sm-6">
+
+        <p class="titulo">¡ TE GUSTA O NO !</p>
+          <div class="divsubt">
+                 <p class="subt">Elige aquellos amig@s que te gustan de forma anonima,</p><p class="subt"> te avisaremos si ambos coinciden, el resto va por tu cuenta.</p>
+            </div>
+        </div>
+        <div class="col-sm-6 text-right"> <% if user_signed_in? %>
+        <%= link_to "Salir", destroy_user_session_path, method: :delete, :class=>"link-avatar"%>
+        <%= image_tag Gravatar.new(current_user.email).image_url,:class=>"img-circle avatar" %>
+        <% end %>
+      </div>
+      </div>
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-8">
+               <% flash.each do |name, err|%>
+                   <%= content_tag :div, err, class: name%>
+                   <% end %>
+              
+        
+          
+        
+        
+        <%= yield %>
+
+                 <% unless user_signed_in? %>
+              <%= render 'shared/modal_login' %>
+           
+            <% end %>
+
+                    
+
+
+      </div>
+    </div>
+
+
+
+   
   </div>
-
-  <footer>
-    <p>Escribenos en twitter <a href="#">@tegustaono</a></p>
-  </footer>
-
+     <!-- <footer>
+      <p>Escribenos en twitter <a href="#"><i class="fa fa-twitter"></i> tegustaono</a></p>
+      <p>&copy; 2014 por <strong>MikeDev</strong></p>
+    </footer> -->
 </body>
 </html>
