@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 gem 'bootstrap-sass'
-
+gem 'autoprefixer-rails'
 gem 'gravatar-ultimate'
 
 group :development do
