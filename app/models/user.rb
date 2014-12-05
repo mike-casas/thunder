@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
 
   def liked?(user)
     likes.find_by_friend_id(user.id)
+
   end
 end
