@@ -37,16 +37,18 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-   #configuracion email
+
+
+      #configuracion de email
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       :authentication => :plain,
-      :address => 'smtp.mailgun.org',
-      :port => 587,
-      :domain =>'sandboxdbc67bcf0d0849e2bc6e829f524b4c5d.mailgun.org',
-      :user_name => 'neneriostb@sandboxdbc67bcf0d0849e2bc6e829f524b4c5d.mailgun.org',
-      :password => 870526
+      :address => ENV["DIRECCION"],
+      :port => ENV["PUERTO"],
+      :domain =>ENV["DOMAIN"],
+      :user_name => ENV["USER_NAME"],
+      :password => ENV["USER_PASS"]
     }
 
 end
