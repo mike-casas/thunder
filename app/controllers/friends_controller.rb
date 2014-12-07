@@ -1,4 +1,7 @@
 class FriendsController < ApplicationController
+
+
+
   before_action :authenticate_user!
 
   def index
@@ -16,8 +19,12 @@ class FriendsController < ApplicationController
 
     if @friend.liked?(current_user)
       render :match
+
+      Email.match(@friend,current_user).deliver
+
     else
       redirect_to root_path
     end
   end
 end
+

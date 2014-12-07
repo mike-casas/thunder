@@ -6,6 +6,13 @@ class User < ActiveRecord::Base
 
   has_many :likes
 
+  #usando el callback de activerecord
+
+  after_create :enviar_email
+    def enviar_email
+      Email.confirmacion(self).deliver
+    end
+
   # A random user I haven't like or unlike yet
   def random_friend
     restricted_ids = self.likes.pluck(:friend_id) << self.id
@@ -14,5 +21,6 @@ class User < ActiveRecord::Base
 
   def liked?(user)
     likes.find_by_friend_id(user.id)
+
   end
 end

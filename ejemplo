@@ -1,0 +1,6 @@
+#!/bin/bash
+v='hola';
+echo $v;
+
+export DIRECCION=miguel;
+ls

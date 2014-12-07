@@ -10,10 +10,9 @@ gem 'jquery-rails'
 # gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
 gem 'devise'
 gem 'bootstrap-sass'
-
+gem 'autoprefixer-rails'
 gem 'gravatar-ultimate'
 
 group :development do
@@ -22,7 +21,8 @@ group :development do
   gem 'guard'
   gem 'guard-livereload', require: false
 end
-
+# gema para layout email
+ gem 'roadie', '~> 2.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
